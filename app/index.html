@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="SampleApp" class="no-js">
+
+<head>
+    <base href="/">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>My AngularJS App</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="lib/html5-boilerplate/dist/css/normalize.css" />
+    <link rel="stylesheet" href="lib/html5-boilerplate/dist/css/main.css" />
+    <link rel="stylesheet" href="app.css" />
+    <script src="lib/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+
+<body>
+
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+    <div ng-view></div>
+
+    <div class="d-flex justify-content-center">
+        AngularJS Sample
+    </div>
+
+    <!-- 載入相關JS-->
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular-route/angular-route.js"></script>
+    <script src="app.js"></script>
+
+    <!-- Controller-->
+    <script src="ShopCart/ShopCartController.js"></script>
+    <script src="ShopCartDetail/ShopCartDetailController.js"></script>
+    <script src="Account/LoginController.js"></script>
+
+    <!-- Service-->
+    <script src="Service/ShopCartService.js"></script>
+    <script src="Service/LoginService.js"></script>
+
+    <!-- Directives-->
+    <script src="Directives/NgHighlight.js"></script>
+    <script src="Directives/NgCombobox.js"></script>
+
+</body>
+
+</html>

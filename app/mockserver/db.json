@@ -1,0 +1,29 @@
+{
+    "products": [{
+            "productId": 1,
+            "productName": "AngularJS",
+            "type": "Book",
+            "author": "Chris Yu",
+            "price": 200,
+            "saleDate": "2019/03/23"
+        },
+        {
+            "productId": 3,
+            "productName": "Java Spring",
+            "type": "Book",
+            "author": "Chris Yu",
+            "price": 700,
+            "saleDate": "2019/03/23"
+        }, {
+            "productId": 2,
+            "productName": "Angular6",
+            "type": "Book",
+            "author": "Chris Yu",
+            "price": 400,
+            "saleDate": "2019/03/23"
+        }
+    ],
+    "account": [{
+        "auth": true
+    }]
+}

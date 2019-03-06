@@ -1,0 +1,19 @@
+<!-- <p>shop cart</p> -->
+<div class="container-fluid">
+    <ul class="menu">
+        <li><a href="/#!/shopcart">shopcart</a></li>
+        <li><a href="/#!/login">back to login</a></li>
+    </ul>
+
+    <div class="alert-success">商品內容</div>
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <p>序號：{{detail.productId}}</p>
+            <p>商品名稱：{{detail.productName}}</p>
+            <p>商品類型：{{detail.type}}</p>
+            <p>售價：{{detail.price | toCurrency:'$'}}</p>
+            <p>上架日期：{{detail.saleDate}}</p>
+        </div>
+    </div>
+
+</div>

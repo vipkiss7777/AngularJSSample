@@ -1,0 +1,4 @@
+/node_modules/
+/app/test/coverage/
+/app/test/report/
+/app/lib/

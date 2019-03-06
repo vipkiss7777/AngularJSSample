@@ -1,0 +1,31 @@
+<!-- <p>shop cart</p> -->
+<div class="container-fluid">
+    <ul class="menu">
+        <li><a href="/#!/shopcart">shopcart</a></li>
+        <li><a href="/#!/login">back to login</a></li>
+    </ul>
+
+    <div class="alert-primary">商品列表</div>
+    <p></p>
+    <button class="btn-primary" ng-click="highlight()">highlight</button>
+
+    <p></p>
+    <input-dropdown input-placeholder="請輸入文字" input-name="country-object" input-required="true" selected-item="dropDownString" default-dropdown-items="defaultDropdownString" filter-list-method="filterObjectList(userInput)" item-selected-method="itemObjectSelected(item)"></input-dropdown>
+    <p></p>
+    <button class="btn-primary" ng-click="onQuery()">查詢</button>
+    <div id="product">
+
+        <ul>
+            <li ng-repeat="prod in cart | orderBy:'productId'">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <p>商品名稱：<a href="/#!/shopcartdetail/{{prod.productId}}">{{prod.productName}}</a></p>
+                        <p ng-highlight="isHighlight">商品類型：{{prod.type}}</p>
+                        <p>售價：{{prod.price | toCurrency:'$'}}</p>
+                        <p>上架日期：{{prod.saleDate}}</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

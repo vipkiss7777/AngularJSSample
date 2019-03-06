@@ -1,0 +1,8 @@
+<div class="input-dropdown">
+    <input type="text" name="{{inputName}}" placeholder="{{inputPlaceholder}}" ng-model="inputValue" ng-required="inputRequired" ng-change="inputChange()" ng-focus="inputFocus()" ng-blur="inputBlur($event)" input-dropdown-validator>
+    <ul ng-show="dropdownVisible">
+        <li ng-repeat="item in dropdownItems" ng-click="selectItem(item)" ng-mouseenter="setActive($index)" ng-mousedown="dropdownPressed()" ng-class="{active: activeItemIndex === $index}">
+            <span>{{item}}</span>
+        </li>
+    </ul>
+</div>
