@@ -4,9 +4,9 @@
 const jsonServer = require('json-server');
 const server = jsonServer.create();
 const middlewares = jsonServer.defaults();
-var router = jsonServer.router('db.json');
+const router = jsonServer.router('db.json');
 
-var db = router.db // lowdb instance
+const db = router.db // lowdb instance
 
 
 server.use((req, res, next) => {
