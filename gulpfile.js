@@ -3,16 +3,17 @@ var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var gutil = require('gulp-util');
 var babel = require('gulp-babel');
+var ngAnnotate = require('gulp-ng-annotate');
 
 var root = './app';
-var dist = './build';
-var ignore = [root + '/Directives/NgCombobox.js'];
+var dist = './dist';
+// var ignore = [root + '/Directives/NgCombobox.js'];
 
 
 var config = {
     js: {
         path: root + '/**/*.js',
-        ignore: ignore
+        // ignore: ignore
     },
     html: {
         path: root + '/**/*.html'
@@ -24,8 +25,9 @@ var config = {
 
 gulp.task('js', function(type) {
 
-    return gulp.src([config.js.path].join('!' + config.js.path.ignore))
+    return gulp.src([config.js.path])
         // .pipe(concat('all.js'))
+        .pipe(ngAnnotate())
         .pipe(babel())
         .pipe(uglify({
             mangle: true,
@@ -38,9 +40,9 @@ gulp.task('js', function(type) {
 });
 
 // Gulp task to copy HTML files to output directory
-gulp.task('jsIgnore', function() {
+gulp.task('js-copy', function() {
     return gulp.src(ignore)
-        .pipe(gulp.dest(dist + '/Directives/'));
+        .pipe(gulp.dest(dist));
 });
 
 // Gulp task to copy HTML files to output directory
@@ -58,4 +60,4 @@ gulp.task('css', function() {
 
 
 // Gulp default task
-gulp.task('default', gulp.parallel('js', 'jsIgnore', 'html', 'css'));
+gulp.task('default', gulp.parallel('js', 'html', 'css'));
